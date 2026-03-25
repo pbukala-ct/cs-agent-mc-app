@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "start": "mc-scripts start",
-    "build": "mc-scripts build",
+    "build": "mc-scripts build --build-only",
     "compile-html": "mc-scripts compile-html",
     "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "@commercetools-frontend/application-components": "^27",
