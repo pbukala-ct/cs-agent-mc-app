@@ -3,7 +3,7 @@
  */
 const config = {
   name: 'CS Agent Management',
-  entryPointUriPath: 'cs-agent-management',
+  entryPointUriPath: '${env:ENTRY_POINT_URI_PATH}',
   cloudIdentifier: '${env:CLOUD_IDENTIFIER}',
   env: {
     production: {

@@ -11,4 +11,4 @@ deployAs:
           default: gcp-eu
         - key: ENTRY_POINT_URI_PATH
           description: The entry point URI path registered in Merchant Center
-          default: cs-agent-management
+          required: true
