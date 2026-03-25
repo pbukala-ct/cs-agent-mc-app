@@ -1,0 +1,42 @@
+{
+  "name": "cs-agent-management-mc-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "mc-scripts start",
+    "build": "mc-scripts build",
+    "compile-html": "mc-scripts compile-html",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@commercetools-frontend/application-components": "^27",
+    "@commercetools-frontend/application-config": "^27",
+    "@commercetools-frontend/application-shell": "^27",
+    "@commercetools-frontend/application-shell-connectors": "^27",
+    "@commercetools-frontend/assets": "^27",
+    "@commercetools-frontend/permissions": "^27",
+    "@commercetools-frontend/sdk": "^27.1.0",
+    "@commercetools-uikit/data-table": "^20",
+    "@commercetools-uikit/icon-button": "^20",
+    "@commercetools-uikit/icons": "^20",
+    "@commercetools-uikit/loading-spinner": "^20",
+    "@commercetools-uikit/primary-button": "^20",
+    "@commercetools-uikit/secondary-button": "^20",
+    "@commercetools-uikit/select-field": "^20",
+    "@commercetools-uikit/spacings": "^20",
+    "@commercetools-uikit/stamp": "^20",
+    "@commercetools-uikit/text": "^20",
+    "@commercetools-uikit/text-field": "^20",
+    "bcrypt-ts": "^8.0.1",
+    "react": "^19",
+    "react-dom": "^19",
+    "react-router-dom": "^5"
+  },
+  "devDependencies": {
+    "@commercetools-frontend/mc-scripts": "^27",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/react-router-dom": "^5",
+    "typescript": "^5"
+  }
+}
