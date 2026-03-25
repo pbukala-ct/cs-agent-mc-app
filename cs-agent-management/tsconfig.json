@@ -1,5 +1,5 @@
 {
-  "extends": "@commercetools-frontend/application-config/tsconfig-mc-app",
+  "extends": "@commercetools-frontend/application-config/tsconfig-mc-app.json",
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",

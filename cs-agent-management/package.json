@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "mc-scripts start",
-    "build": "mc-scripts build --build-only",
+    "build": "mc-scripts build",
     "compile-html": "mc-scripts compile-html",
     "typecheck": "tsc --noEmit"
   },

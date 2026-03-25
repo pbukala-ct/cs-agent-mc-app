@@ -12,7 +12,7 @@ const config = {
       url: '${env:APPLICATION_URL}',
     },
     development: {
-      initialProjectKey: '${env:CTP_PROJECT_KEY}',
+      initialProjectKey: 'your-project-key',
     },
   },
   oAuthScopes: {
