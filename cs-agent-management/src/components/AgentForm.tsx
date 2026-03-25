@@ -112,6 +112,25 @@ export default function AgentForm({
     });
   }
 
+  async function handleResetPassword() {
+    if (!agentKey || !initial) return;
+    setSubmitting(true);
+    setErrors({});
+    try {
+      const plain = generatePassword();
+      const passwordHash = hashPassword(plain);
+      await ct.upsertAgent(agentKey, {
+        ...(initial as AgentRecord),
+        passwordHash,
+      });
+      setGeneratedPassword(plain);
+    } catch (e) {
+      setErrors({ submit: e instanceof Error ? e.message : 'Failed to reset password' });
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -145,6 +164,13 @@ export default function AgentForm({
               type="submit"
               isDisabled={submitting}
             />
+            {mode === 'edit' && (
+              <SecondaryButton
+                label="Reset password"
+                isDisabled={submitting}
+                onClick={handleResetPassword}
+              />
+            )}
             <SecondaryButton label="Cancel" onClick={onCancel} />
           </Spacings.Inline>
         </Spacings.Stack>
@@ -152,11 +178,11 @@ export default function AgentForm({
 
       {generatedPassword && (
         <InfoDialog
-          title="Agent created — save this password"
+          title={mode === 'create' ? 'Agent created — save this password' : 'Password reset — save this password'}
           isOpen
           onClose={() => {
             setGeneratedPassword(null);
-            onSuccess();
+            if (mode === 'create') onSuccess();
           }}
         >
           <Spacings.Stack scale="m">
@@ -189,7 +215,7 @@ export default function AgentForm({
               label="Done"
               onClick={() => {
                 setGeneratedPassword(null);
-                onSuccess();
+                if (mode === 'create') onSuccess();
               }}
             />
           </Spacings.Stack>
